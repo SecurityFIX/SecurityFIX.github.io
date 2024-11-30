@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de privacidad de SecurityFix - Protege tus datos personales.">
+    <meta name="keywords" content="política de privacidad, SecurityFix, protección de datos, ciberseguridad, privacidad">
+    <meta name="author" content="SecurityFix">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Política de Privacidad - SecurityFix">
+    <meta property="og:description" content="Lee nuestra política de privacidad y cómo protegemos tus datos personales en SecurityFix.">
+    <meta property="og:image" content="https://source.unsplash.com/1600x900/?privacy">
+    <meta property="og:url" content="https://www.securityfix.com/politica-privacidad">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Política de Privacidad - SecurityFix">
+    <meta name="twitter:description" content="Conoce cómo protegemos tus datos personales en SecurityFix.">
+    <meta name="twitter:image" content="https://source.unsplash.com/1600x900/?privacy">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" type="image/png">
+    <title>Política de Privacidad - SecurityFix</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=San+Francisco:wght@400;500;700&display=swap">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'San Francisco', sans-serif;
+            background-color: #121212;
+            color: #f2f2f2;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: filter 0.3s ease;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .banner {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: #1c1c1c;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+
+        .content {
+            padding: 50px 10%;
+            animation: fadeInContent 2s forwards;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            padding: 20px 10%;
+            background-color: #333;
+            text-align: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" alt="Logo SecurityFix">
+            <span>SecurityFix</span>
+        </div>
+    </header>
+
+    <div class="banner">
+        <h1>Política de Privacidad</h1>
+        <p>Lee cómo protegemos tus datos personales y tu privacidad.</p>
+    </div>
+
+    <div class="content">
+        <h2>1. Información que Recopilamos</h2>
+        <p>En SecurityFix, recogemos información personal para proporcionarte nuestros servicios de manera más eficiente...</p>
+
+        <h2>2. Cómo Usamos Tu Información</h2>
+        <p>Tu información personal es utilizada exclusivamente para procesar tus compras, mejorar nuestros servicios y mantener la seguridad...</p>
+
+        <h2>3. Compartir Información</h2>
+        <p>Nos comprometemos a no vender ni compartir tu información personal con terceros, salvo en los casos en que sea necesario...</p>
+
+        <h2>4. Tus Derechos de Privacidad</h2>
+        <p>Tienes derecho a acceder, modificar o eliminar tu información personal en cualquier momento, de acuerdo con las leyes...</p>
+
+        <h2>5. Seguridad de la Información</h2>
+        <p>Implementamos medidas de seguridad avanzadas para proteger tu información personal...</p>
+    </div>
+
+    <footer>
+        <p>© 2024 SecurityFix. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Animación para la carga de la página
+        window.onload = function () {
+            document.querySelector(".banner").style.animation = "fadeIn 2s ease-in-out";
+            document.querySelector(".content").style.animation = "fadeInContent 2s forwards";
+        };
+    </script>
+</body>
+
+</html>
