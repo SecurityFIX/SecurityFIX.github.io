@@ -20,12 +20,10 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" type="image/png">
     <title>SecurityFix - Ciberseguridad</title>
 
-    <!-- Fuente Mejorada -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
 
     <!-- Estilos -->
     <style>
-        /* Global Styles */
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
@@ -368,7 +366,7 @@
         <h2>Productos Destacados</h2>
         <div class="productos-container">
             <div class="producto-card">
-                <h3>Website📄</h3>
+                <h3>Website💻</h3>
                 <p>Diseñamos sitios web modernos y personalizados para potenciar tu negocio.</p>
                 <a href="Pago.html" class="btn-comprar">Comprar Ahora</a>
             </div>
@@ -382,7 +380,7 @@
                 <p>Coming soon.🔥</p>
                 <a href="#" class="btn-comprar">Comprar Ahora</a>
                 <style>
-                    /* Estilos específicos para "tachar" el producto */
+                   
 .coming-soon {
     position: relative;
     padding: 20px;
@@ -395,7 +393,7 @@
 .coming-soon h3,
 .coming-soon p {
     text-decoration: line-through;
-    color: #999; /* Cambia el color para dar un efecto de "desactivado" */
+    color: #999; 
 }
 
 .coming-soon .btn-comprar {
@@ -440,12 +438,12 @@
         </form>
     </section>
 
-    <!-- Footer -->
+   
     <footer>
         <p>© 2024 SecurityFix. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Pop-up de Cookies -->
+    
     <div id="cookie-popup">
         <p>Este sitio usa cookies para mejorar tu experiencia. ¿Aceptas el uso de cookies?</p>
         <button id="accept-cookies">Aceptar</button>
@@ -453,12 +451,11 @@
     </div>
 
     <script>
-        // Mostrar el pop-up
         setTimeout(function() {
             document.getElementById('cookie-popup').style.display = 'block';
         }, 1000);
 
-        // Aceptar cookies
+      
         document.getElementById('accept-cookies').onclick = function() {
             document.getElementById('cookie-popup').style.animation = 'slideInUp 0.5s reverse';
             setTimeout(function() {
@@ -467,13 +464,13 @@
             }, 500);
         };
 
-        // Rechazar cookies
+        
         document.getElementById('reject-cookies').onclick = function() {
             window.location.href = 'https://www.google.com';
         };
 
         // Difuminar el fondo
-        document.body.style.filter = 'blur(0px)'
+        document.body.style.filter = 'blur(1px)'
 
     </script>
 
