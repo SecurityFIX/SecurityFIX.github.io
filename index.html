@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SecurityFix - Soluciones de Ciberseguridad innovadoras con estilo.">
+    <meta name="keywords" content="ciberseguridad, seguridad digital, antivirus, firewall, vpn">
+    <meta name="author" content="SecurityFix">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SecurityFix - Soluciones de Ciberseguridad">
+    <meta property="og:description" content="Protege tu vida digital con nuestras soluciones de ciberseguridad avanzadas.">
+    <meta property="og:image" content="https://source.unsplash.com/1600x900/?cybersecurity">
+    <meta property="og:url" content="https://www.securityfix.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SecurityFix - Soluciones de Ciberseguridad">
+    <meta name="twitter:description" content="Protege tus datos con las mejores herramientas.">
+    <meta name="twitter:image" content="https://source.unsplash.com/1600x900/?security">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" type="image/png">
+    <title>SecurityFix - Ciberseguridad</title>
+
+    <!-- Fuente Mejorada -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+
+    <!-- Estilos -->
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #f2f2f2;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: filter 0.3s ease;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 35px;
+            margin-right: 10px;
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: linear-gradient(90deg, #3a3a3a, #5a5a5a);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .login:hover {
+            background: linear-gradient(90deg, #4a90e2, #0071e3);
+            box-shadow: 0px 4px 15px rgba(0, 112, 227, 0.5);
+            transform: scale(1.1);
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            background-image: url('https://source.unsplash.com/1600x900/?cybersecurity,technology');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .banner h1 {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideInTitle 1.5s forwards;
+        }
+
+        .banner h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 10px;
+            color: #e0e0e0;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+
+        .productos-section {
+            padding: 50px 10%;
+            text-align: center;
+            animation: fadeInSection 1.5s forwards;
+        }
+
+        .productos-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .productos-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .producto-card {
+            background: #2e2e2e;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .producto-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #0071e3, #4a90e2);
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-comprar:hover {
+            background: linear-gradient(90deg, #4a90e2, #0071e3);
+            box-shadow: 0px 4px 15px rgba(0, 112, 227, 0.5);
+            transform: scale(1.1);
+        }
+
+        .contact-section {
+            padding: 50px 10%;
+            text-align: center;
+            background: #1e1e1e;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 50px auto;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .contact-form {
+            background: #333;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            display: grid;
+            gap: 20px;
+            justify-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #444;
+            border-radius: 10px;
+            background-color: #1d1d1d;
+            color: #f2f2f2;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0071e3;
+            outline: none;
+            box-shadow: 0px 0px 10px rgba(0, 112, 227, 0.3);
+        }
+
+        .contact-form button {
+            background: linear-gradient(90deg, #0071e3, #4a90e2);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: linear-gradient(90deg, #4a90e2, #0071e3);
+            transform: scale(1.05);
+        }
+
+        .contact-form label {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #f2f2f2;
+        }
+
+        .contact-form button:disabled {
+            background: gray;
+            cursor: not-allowed;
+        }
+
+        /* Pop-up de Cookies */
+        #cookie-popup {
+            display: none;
+            position: fixed;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            animation: slideInUp 0.5s forwards;
+        }
+
+        #cookie-popup p {
+            margin: 0;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        #cookie-popup button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            background: linear-gradient(90deg, #0071e3, #4a90e2);
+            color: white;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #cookie-popup button:hover {
+            background: linear-gradient(90deg, #4a90e2, #0071e3);
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInTitle {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                bottom: -200px;
+            }
+
+            to {
+                bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" alt="Logo SecurityFix">
+            <span>SecurityFix</span>
+        </div>
+        <div class="login">
+            Iniciar sesión
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <h1>Protege tu mundo digital</h1>
+        <h2>Soluciones avanzadas de ciberseguridad</h2>
+        <h2>Trabajamos para ti.</h2>
+    </div>
+
+    <!-- Productos -->
+    <section class="productos-section" id="productos">
+        <h2>Productos Destacados</h2>
+        <div class="productos-container">
+            <div class="producto-card">
+                <h3>Website📄</h3>
+                <p>Diseñamos sitios web modernos y personalizados para potenciar tu negocio.</p>
+                <a href="pago.html" class="btn-comprar">Comprar Ahora</a>
+            </div>
+            <div class="producto-card">
+                <h3>Auditoría de Ciberseguridad🔒</h3>
+                <p>Realizamos auditorías exhaustivas para detectar y solucionar vulnerabilidades.</p>
+                <a href="Pago.html" class="btn-comprar">Comprar Ahora</a>
+            </div>
+            <div class="coming-soon">
+                <h3>Coming soon.🔥</h3>
+                <p>Coming soon.🔥</p>
+                <a href="#" class="btn-comprar">Comprar Ahora</a>
+                <style>
+                    /* Estilos específicos para "tachar" el producto */
+.coming-soon {
+    position: relative;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.coming-soon h3,
+.coming-soon p {
+    text-decoration: line-through;
+    color: #999; /* Cambia el color para dar un efecto de "desactivado" */
+}
+
+.coming-soon .btn-comprar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ddd;
+    color: #888;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: not-allowed; 
+    opacity: 0.6;
+}
+
+.coming-soon .coming-soon:hover {
+    background-color: #ccc; 
+     cursor: not-allowed; }
+
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="contact-section" id="contacto">
+        <h2>Contáctanos</h2>
+        <form class="contact-form" method="post" action="/enviar-contacto">
+            <div style="width: 100%;">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div style="width: 100%;">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div style="width: 100%;">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 SecurityFix. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Pop-up de Cookies -->
+    <div id="cookie-popup">
+        <p>Este sitio usa cookies para mejorar tu experiencia. ¿Aceptas el uso de cookies?</p>
+        <button id="accept-cookies">Aceptar</button>
+        <button id="reject-cookies">Rechazar</button>
+    </div>
+
+    <script>
+        // Mostrar el pop-up
+        setTimeout(function() {
+            document.getElementById('cookie-popup').style.display = 'block';
+        }, 1000);
+
+        // Aceptar cookies
+        document.getElementById('accept-cookies').onclick = function() {
+            document.getElementById('cookie-popup').style.animation = 'slideInUp 0.5s reverse';
+            setTimeout(function() {
+                document.getElementById('cookie-popup').style.display = 'none';
+                document.body.style.filter = 'none';
+            }, 500);
+        };
+
+        // Rechazar cookies
+        document.getElementById('reject-cookies').onclick = function() {
+            window.location.href = 'https://www.google.com';
+        };
+
+        // Difuminar el fondo
+        document.body.style.filter = 'blur(0px)'
+
+    </script>
+
+<!-- EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("YOUR_USER_ID"); // Reemplaza con tu ID de usuario de EmailJS
+    })();
+
+    // Manejo del envío de formulario
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var mensaje = document.getElementById("mensaje").value;
+
+        var templateParams = {
+            nombre: nombre,
+            email: email,
+            mensaje: mensaje
+        };
+
+        // Enviar mensaje con EmailJS
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+            .then(function (response) {
+                alert("¡Mensaje enviado con éxito!");
+                document.getElementById("contact-form").reset();
+            }, function (error) {
+                alert("Hubo un error al enviar el mensaje: " + error.text);
+            });
+    });
+</script>
+
+</body>
+
+</html>
