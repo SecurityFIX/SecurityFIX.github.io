@@ -325,10 +325,164 @@
                 bottom: 20px;
             }
         }
+
+
+
+
+
+
+
+        .banner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            background-image: url('https://source.unsplash.com/1600x900/?cybersecurity,technology');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s forwards;
+        }
+
+        /* Estilos para la "X" y mensaje de mantenimiento */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .overlay h2 {
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            animation: slideInTitle 1.5s forwards;
+        }
+
+
+
+
+
+
+         /* Animación de la "X" */
+         @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(45deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInTitle {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+
+
+
+        .timer {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFCC00;
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 2s forwards 1.5s;
+        }
+
+
     </style>
 </head>
 
 <body>
+
+    <div class="overlay">
+        <h2>¡Web en Mantenimiento!</h2>
+        <div id="timer" class="timer">Tiempo restante: 24:00:00</div>
+        <span class="close-btn" onclick="disablePage()">&#10006;</span>
+    </div>
+
+
+     <!-- Script para deshabilitar la página -->
+     <script>
+        function disablePage() {
+            document.body.style.pointerEvents = 'none'; // Deshabilita la interacción
+            document.body.style.filter = 'blur(5px)'; // Aplica un desenfoque a la página
+        }
+
+// Función para actualizar el contador
+function updateCountdown() {
+    const endTime = new Date().getTime() + (24 * 60 * 60 * 1000); // 24 horas en milisegundos
+
+    function updateTime() {
+        const now = new Date().getTime();
+        const timeLeft = endTime - now;
+
+        // Si el tiempo ha llegado a cero, mostramos el mensaje
+        if (timeLeft <= 0) {
+            document.getElementById('timer').innerHTML = "¡El mantenimiento ha terminado!";
+            clearInterval(countdownInterval);
+            return;
+        }
+
+        const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeLeft / 1000) % 60);
+
+        document.getElementById('timer').innerHTML = `Tiempo restante: ${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+    }
+
+    // Llamada inicial
+    updateTime();
+
+    // Actualización cada segundo
+    const countdownInterval = setInterval(updateTime, 1000);
+}
+
+// Iniciar el contador al cargar la página
+window.onload = updateCountdown;
+
+
+    </script>
+
     <!-- Header -->
     <header>
         <div class="logo">
@@ -347,7 +501,7 @@
 }
 
 .login a:hover {
-    color: #0071e3; /* Cambiar color en hover */
+    color: #0071e3; 
 }
 </style>
 </div>
