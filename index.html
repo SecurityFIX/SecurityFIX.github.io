@@ -325,117 +325,10 @@
                 bottom: 20px;
             }
         }
-
-
-
-
-
-
-
-        .banner {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 400px;
-            background-image: url('https://source.unsplash.com/1600x900/?cybersecurity,technology');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 700;
-            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1.5s forwards;
-        }
-
-        /* Estilos para la "X" y mensaje de mantenimiento */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            animation: fadeIn 1.5s forwards;
-        }
-
-        .overlay h2 {
-            color: white;
-            font-size: 3rem;
-            font-weight: 700;
-            text-align: center;
-            animation: slideInTitle 1.5s forwards;
-        }
-
-
-
-
-
-
-         /* Animación de la "X" */
-         @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            50% {
-                transform: rotate(45deg);
-            }
-
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInTitle {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-
-
     </style>
 </head>
 
 <body>
-
-    <div class="overlay">
-        <h2>¡Web en Mantenimiento!</h2>
-        <span class="close-btn" onclick="disablePage()">&#10006;</span>
-    </div>
-
-
-     <!-- Script para deshabilitar la página -->
-     <script>
-        function disablePage() {
-            document.body.style.pointerEvents = 'none'; // Deshabilita la interacción
-            document.body.style.filter = 'blur(5px)'; // Aplica un desenfoque a la página
-        }
-    </script>
-
     <!-- Header -->
     <header>
         <div class="logo">
@@ -454,7 +347,7 @@
 }
 
 .login a:hover {
-    color: #0071e3; 
+    color: #0071e3; /* Cambiar color en hover */
 }
 </style>
 </div>
@@ -615,6 +508,20 @@
             });
     });
 </script>
+
+<script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '674c69c1bb2730de151de0c8' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production'
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
 
 </body>
 
