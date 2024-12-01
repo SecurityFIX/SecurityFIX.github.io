@@ -417,18 +417,6 @@
 
 
 
-
-
-        .timer {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #FFCC00;
-            text-align: center;
-            margin-top: 20px;
-            animation: fadeIn 2s forwards 1.5s;
-        }
-
-
     </style>
 </head>
 
@@ -436,7 +424,6 @@
 
     <div class="overlay">
         <h2>¡Web en Mantenimiento!</h2>
-        <div id="timer" class="timer">Tiempo restante: 24:00:00</div>
         <span class="close-btn" onclick="disablePage()">&#10006;</span>
     </div>
 
@@ -447,40 +434,6 @@
             document.body.style.pointerEvents = 'none'; // Deshabilita la interacción
             document.body.style.filter = 'blur(5px)'; // Aplica un desenfoque a la página
         }
-
-// Función para actualizar el contador
-function updateCountdown() {
-    const endTime = new Date().getTime() + (24 * 60 * 60 * 1000); // 24 horas en milisegundos
-
-    function updateTime() {
-        const now = new Date().getTime();
-        const timeLeft = endTime - now;
-
-        // Si el tiempo ha llegado a cero, mostramos el mensaje
-        if (timeLeft <= 0) {
-            document.getElementById('timer').innerHTML = "¡El mantenimiento ha terminado!";
-            clearInterval(countdownInterval);
-            return;
-        }
-
-        const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
-        const seconds = Math.floor((timeLeft / 1000) % 60);
-
-        document.getElementById('timer').innerHTML = `Tiempo restante: ${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-    }
-
-    // Llamada inicial
-    updateTime();
-
-    // Actualización cada segundo
-    const countdownInterval = setInterval(updateTime, 1000);
-}
-
-// Iniciar el contador al cargar la página
-window.onload = updateCountdown;
-
-
     </script>
 
     <!-- Header -->
