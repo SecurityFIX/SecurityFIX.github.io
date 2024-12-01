@@ -37,11 +37,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 30px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(15px);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         .logo img {
@@ -53,6 +55,12 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
         }
 
         .login {
@@ -60,45 +68,61 @@
             align-items: center;
             cursor: pointer;
             font-weight: 500;
+            color: #fff;
         }
 
         .banner {
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
-            background-color: #1c1c1c;
+            background: linear-gradient(135deg, #00d2d3, #007cf0);
             color: white;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeInBanner 3s ease-out;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .banner h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 700;
             margin: 20px 0;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            animation: fadeInText 2s ease-out 1s forwards;
         }
 
         .banner p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #e0e0e0;
             font-weight: 400;
             opacity: 0;
-            animation: fadeIn 2s ease-in-out 1s forwards;
+            animation: fadeInText 2s ease-out 2s forwards;
         }
 
         .content {
             padding: 50px 10%;
-            animation: fadeInContent 2s forwards;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+            animation: fadeInContent 2s ease-in-out;
+            margin-top: -30px;
+            z-index: 999;
         }
 
         .content h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 600;
             margin-bottom: 20px;
+            color: #fff;
+            opacity: 0;
+            animation: slideInText 1.5s ease-out forwards;
         }
 
         .content p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 20px;
+            color: #ccc;
+            opacity: 0;
+            animation: slideInText 2s ease-out forwards;
         }
 
         footer {
@@ -107,16 +131,40 @@
             text-align: center;
             color: white;
             font-size: 1rem;
+            position: relative;
+            z-index: 999;
+        }
+
+        footer a {
+            color: #007cf0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #00d2d3;
         }
 
         /* Animations */
-        @keyframes fadeIn {
+        @keyframes fadeInBanner {
             from {
                 opacity: 0;
+                transform: translateY(-30px);
             }
-
             to {
                 opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -125,12 +173,118 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
+        @keyframes slideInText {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Hover effects on buttons */
+        .button {
+            background-color: #007cf0;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            background-color: #003c8f;
+            transform: scale(1);
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInCard 2s ease-out forwards;
+        }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 10%;
+            background-color: #1c1c1c;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .section p {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeInText 2s ease-out forwards;
+        }
+
     </style>
 </head>
 
@@ -139,6 +293,9 @@
         <div class="logo">
             <img src="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" alt="Logo SecurityFix">
             <span>SecurityFix</span>
+        </div>
+        <div class="login">
+            <a href="#" class="button">Iniciar sesión</a>
         </div>
     </header>
 
@@ -149,30 +306,40 @@
 
     <div class="content">
         <h2>1. Información que Recopilamos</h2>
-        <p>En SecurityFix, recogemos información personal para proporcionarte nuestros servicios de manera más eficiente...</p>
+        <div class="card">
+            <p>En SecurityFix, recogemos información personal para proporcionarte nuestros servicios de manera más eficiente...</p>
+        </div>
 
         <h2>2. Cómo Usamos Tu Información</h2>
-        <p>Tu información personal es utilizada exclusivamente para procesar tus compras, mejorar nuestros servicios y mantener la seguridad...</p>
+        <div class="card">
+            <p>Tu información personal es utilizada exclusivamente para procesar tus compras, mejorar nuestros servicios y mantener la seguridad...</p>
+        </div>
 
         <h2>3. Compartir Información</h2>
-        <p>Nos comprometemos a no vender ni compartir tu información personal con terceros, salvo en los casos en que sea necesario...</p>
+        <div class="card">
+            <p>Nos comprometemos a no vender ni compartir tu información personal con terceros, salvo en los casos en que sea necesario...</p>
+        </div>
 
         <h2>4. Tus Derechos de Privacidad</h2>
-        <p>Tienes derecho a acceder, modificar o eliminar tu información personal en cualquier momento, de acuerdo con las leyes...</p>
+        <div class="card">
+            <p>Tienes derecho a acceder, modificar o eliminar tu información personal en cualquier momento, de acuerdo con las leyes...</p>
+        </div>
 
         <h2>5. Seguridad de la Información</h2>
-        <p>Implementamos medidas de seguridad avanzadas para proteger tu información personal...</p>
+        <div class="card">
+            <p>Implementamos medidas de seguridad avanzadas para proteger tu información personal...</p>
+        </div>
     </div>
 
     <footer>
         <p>© 2024 SecurityFix. Todos los derechos reservados.</p>
+        <p><a href="#">Ver términos y condiciones</a></p>
     </footer>
 
     <script>
-        // Animación para la carga de la página
         window.onload = function () {
-            document.querySelector(".banner").style.animation = "fadeIn 2s ease-in-out";
-            document.querySelector(".content").style.animation = "fadeInContent 2s forwards";
+            document.querySelector(".banner").style.animation = "fadeInBanner 3s ease-out";
+            document.querySelector(".content").style.animation = "fadeInContent 2s ease-in-out";
         };
     </script>
 </body>
