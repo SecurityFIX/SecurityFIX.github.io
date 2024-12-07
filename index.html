@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SecurityFix - Soluciones de Ciberseguridad innovadoras con estilo.">
-    <meta name="keywords" content="ciberseguridad, seguridad digital, websites">
+    <meta name="keywords" content="ciberseguridad, seguridad digital, websites, HTML, CSS, PHP, JS">
     <meta name="author" content="SecurityFix">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="SecurityFix - Soluciones de Ciberseguridad">
@@ -21,8 +22,7 @@
     <title>SecurityFix - Ciberseguridad</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
-
-    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -44,6 +44,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
@@ -75,6 +76,75 @@
             transform: scale(1.1);
         }
 
+        /* Animaciones adicionales */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInTitle {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(0, 112, 227, 0.8);
+            }
+
+            50% {
+                text-shadow: 0 0 20px rgba(0, 112, 227, 1);
+            }
+
+            100% {
+                text-shadow: 0 0 10px rgba(0, 112, 227, 0.8);
+            }
+        }
+
+        @keyframes textEffect {
+            0% {
+                transform: rotate(0deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                opacity: 1;
+            }
+        }
+
+        header h1 {
+            font-size: 2rem;
+            animation: bounce 1s infinite;
+        }
+
+        /* Banner */
         .banner {
             display: flex;
             flex-direction: column;
@@ -107,16 +177,86 @@
             animation: fadeIn 2s forwards 1s;
         }
 
+        /* Sección ¿A qué nos dedicamos? */
+        .about-section {
+            padding: 50px 10%;
+            text-align: center;
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            animation: fadeIn 2s forwards;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .about-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 3rem;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .about-icons div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeIn 2s forwards;
+        }
+
+        .about-icons i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .about-icons i:hover {
+            transform: scale(1.3);
+        }
+
+        /* Nueva paleta de iconos */
+        .html-icon {
+            color: #f16529;
+        }
+
+        .css-icon {
+            color: #2965f1;
+        }
+
+        .js-icon {
+            color: #f7df1e;
+        }
+
+        .php-icon {
+            color: #8993be;
+        }
+
+        .cybersecurity-icon {
+            color: #00aaff;
+        }
+
+        .about-icons span {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+
+        /* Productos */
         .productos-section {
             padding: 50px 10%;
             text-align: center;
-            animation: fadeInSection 1.5s forwards;
+            animation: fadeIn 2s forwards;
         }
 
         .productos-section h2 {
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 20px;
+            animation: glow 3s infinite alternate;
         }
 
         .productos-container {
@@ -124,21 +264,37 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 30px;
+            animation: fadeIn 2s forwards;
         }
 
         .producto-card {
             background: #2e2e2e;
             border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             width: 300px;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            animation: fadeIn 2s forwards;
         }
 
         .producto-card:hover {
             transform: scale(1.05);
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            background-color: #333;
+        }
+
+        .producto-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .producto-card p {
+            font-size: 1rem;
+            color: #ccc;
+            margin: 15px 0;
         }
 
         .btn-comprar {
@@ -152,6 +308,7 @@
             font-size: 1rem;
             font-weight: 600;
             transition: all 0.3s ease-in-out;
+            animation: bounce 1s infinite;
         }
 
         .btn-comprar:hover {
@@ -160,6 +317,7 @@
             transform: scale(1.1);
         }
 
+        /* Contacto */
         .contact-section {
             padding: 50px 10%;
             text-align: center;
@@ -169,14 +327,7 @@
             max-width: 800px;
             margin: 50px auto;
             opacity: 0;
-            animation: fadeIn 1.5s forwards;
-        }
-
-        .contact-section h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            color: #fff;
+            animation: fadeIn 2s forwards;
         }
 
         .contact-form {
@@ -190,8 +341,6 @@
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
         }
 
         .contact-form input,
@@ -223,227 +372,121 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
         }
 
         .contact-form button:hover {
             background: linear-gradient(90deg, #4a90e2, #0071e3);
-            transform: scale(1.05);
-        }
-
-        .contact-form label {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 5px;
-            color: #f2f2f2;
-        }
-
-        .contact-form button:disabled {
-            background: gray;
-            cursor: not-allowed;
-        }
-
-        /* Pop-up de Cookies */
-        #cookie-popup {
-            display: none;
-            position: fixed;
-            bottom: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.9);
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            animation: slideInUp 0.5s forwards;
-        }
-
-        #cookie-popup p {
-            margin: 0;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-
-        #cookie-popup button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            background: linear-gradient(90deg, #0071e3, #4a90e2);
-            color: white;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        #cookie-popup button:hover {
-            background: linear-gradient(90deg, #4a90e2, #0071e3);
             transform: scale(1.1);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInTitle {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInSection {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                bottom: -200px;
-            }
-
-            to {
-                bottom: 20px;
-            }
         }
     </style>
 </head>
 
 <body>
+
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" alt="Logo SecurityFix">
-            <span>SecurityFix</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" alt="Logo">
+            <h1>SecurityFix</h1>
         </div>
-        <div class="login">
-    <a href="Login.html">Iniciar sesión</a>
-            <style>
-            .login a {
-    text-decoration: none; /* Eliminar subrayado */
-    color: #fff; /* Texto blanco */
-    font-size: 1.2rem; /* Tamaño de fuente */
-    font-weight: 600; /* Peso de la fuente */
-    transition: color 0.3s ease; /* Transición para el color */
-}
-
-.login a:hover {
-    color: #0071e3; /* Cambiar color en hover */
-}
-</style>
-</div>
-
+        <div class="login">Iniciar sesión</div>
     </header>
 
     <!-- Banner -->
     <div class="banner">
-        <h1>Protege tu mundo digital</h1>
-        <h2>Soluciones avanzadas de ciberseguridad.</h2>
-        
+        <h1>Protege tu información digital</h1>
+        <h2>Innovación y seguridad al alcance de todos</h2>
+    </div>
+
+    <!-- ¿A qué nos dedicamos? -->
+    <div class="about-section">
+        <h2>¿A qué nos dedicamos?</h2>
+        <div class="about-icons">
+            <div><i class="fab fa-html5 html-icon"></i><span>HTML</span></div>
+            <div><i class="fab fa-css3-alt css-icon"></i><span>CSS</span></div>
+            <div><i class="fab fa-js-square js-icon"></i><span>JavaScript</span></div>
+            <div><i class="fab fa-php php-icon"></i><span>PHP</span></div>
+            <div><i class="fas fa-shield-alt cybersecurity-icon"></i><span>Ciberseguridad</span></div>
+        </div>
+        <p>Con años de experencia en estos apartados, ofrecemos soluciones robustas para proteger tu información y activos digitales.</p>
     </div>
 
     <!-- Productos -->
-    <section class="productos-section" id="productos">
-        <h2>Productos Destacados</h2>
+    <div class="productos-section">
+        <h2>Nuestros Productos</h2>
         <div class="productos-container">
             <div class="producto-card">
-                <h3>Website💻</h3>
-                <p>Diseñamos sitios web modernos y personalizados para potenciar tu negocio.</p>
-                <a href="Pago.html" class="btn-comprar">Comprar Ahora</a>
+                <h3>Protege tu sitio web</h3>
+                <p>Protege tu sitio web con nuestras soluciones, incrementando la seguridad de tu página y asegurando la protección de tus datos.</p>
+                <a href="Pago.html" class="btn-comprar">Comprar</a>
             </div>
             <div class="producto-card">
-                <h3>Auditoría de Ciberseguridad🔒</h3>
-                <p>Realizamos auditorías exhaustivas para detectar y solucionar vulnerabilidades.</p>
-                <a href="Pago.html" class="btn-comprar">Comprar Ahora</a>
+                <h3>Probamos la seguridad de tu web</h3>
+                <p>Realizamos una auditoría de seguridad en tu sitio web y te proporcionamos un informe detallado con los resultados, para que puedas corregir cualquier vulnerabilidad.</p>
+                <a href="Pago.html" class="btn-comprar">Comprar</a>
             </div>
-            <div class="coming-soon">
-                <h3>Coming soon.🔥</h3>
-                <p>Coming soon.🔥</p>
-                <a href="#" class="btn-comprar">Comprar Ahora</a>
-                <style>
-                   
-.coming-soon {
-    position: relative;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.coming-soon h3,
-.coming-soon p {
-    text-decoration: line-through;
-    color: #999; 
-}
-
-.coming-soon .btn-comprar {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ddd;
-    color: #888;
-    border: 2px solid #ccc;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: not-allowed; 
-    opacity: 0.6;
-}
-
-.coming-soon .coming-soon:hover {
-    background-color: #ccc; 
-     cursor: not-allowed; }
-
-                </style>
+            <div class="producto-card">
+                <h3>Creamos tu web</h3>
+                <p>Desarrollamos tu sitio web para negocios, con toda la información y detalles que nos proporciones. Tarifa adicional de hosting.</p>
+                <a href="Pago.html" class="btn-comprar">Comprar</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Formulario de Contacto -->
-    <section class="contact-section" id="contacto">
-        <h2>Contáctanos</h2>
-        <form class="contact-form" method="post" action="/enviar-contacto">
-            <div style="width: 100%;">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div style="width: 100%;">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div style="width: 100%;">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-            </div>
+    <!-- Contacto -->
+    <div class="contact-section">
+        <h2>Contacto</h2>
+        <form class="contact-form" id="contact-form">
+            <input type="text" name="name" id="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" id="email" placeholder="Tu correo" required>
+            <textarea name="message" id="message" placeholder="Tu mensaje" rows="5" required></textarea>
             <button type="submit">Enviar</button>
         </form>
-    </section>
-
-   
-    <footer>
-        <p>© 2024 SecurityFix. Todos los derechos reservados.</p>
-    </footer>
-
+    </div>
     
+
+
+
+
+
+
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("YOUR_USER_ID"); // Reemplaza "YOUR_USER_ID" con tu ID de usuario de EmailJS
+        })();
+    
+        // Manejo del envío de formulario
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+    
+            var nombre = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mensaje = document.getElementById("message").value;
+    
+            var templateParams = {
+                name: nombre,
+                email: email,
+                message: mensaje
+            };
+    
+            // Enviar mensaje con EmailJS
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams) // Reemplaza con tu servicio y template de EmailJS
+                .then(function (response) {
+                    alert("¡Mensaje enviado con éxito!");
+                    document.getElementById("contact-form").reset();
+                }, function (error) {
+                    alert("Hubo un error al enviar el mensaje: " + error.text);
+                });
+        });
+    </script>
+
+
+
+
+
     <div id="cookie-popup">
         <p>Este sitio usa cookies para mejorar tu experiencia. ¿Aceptas el uso de cookies?</p>
         <div class="note">
@@ -477,51 +520,75 @@
 
     </script>
 
-<!-- EmailJS -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    (function () {
-        emailjs.init("YOUR_USER_ID"); // Reemplaza con tu ID de usuario de EmailJS
-    })();
 
-    // Manejo del envío de formulario
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault();
 
-        var nombre = document.getElementById("nombre").value;
-        var email = document.getElementById("email").value;
-        var mensaje = document.getElementById("mensaje").value;
 
-        var templateParams = {
-            nombre: nombre,
-            email: email,
-            mensaje: mensaje
-        };
-
-        // Enviar mensaje con EmailJS
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
-            .then(function (response) {
-                alert("¡Mensaje enviado con éxito!");
-                document.getElementById("contact-form").reset();
-            }, function (error) {
-                alert("Hubo un error al enviar el mensaje: " + error.text);
-            });
-    });
-</script>
-
-<script type="text/javascript">
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '674c69c1bb2730de151de0c8' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
-          });
+    <style>
+        /* Pop-up de Cookies */
+        #cookie-popup {
+            display: none;
+            position: fixed;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            max-width: 350px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            animation: slideInUp 0.5s forwards;
         }
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
+
+        #cookie-popup p {
+            margin: 0;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        #cookie-popup button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            background: linear-gradient(90deg, #0071e3, #4a90e2);
+            color: white;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #cookie-popup button:hover {
+            background: linear-gradient(90deg, #4a90e2, #0071e3);
+            transform: scale(1.1);
+        }
+
+    </style>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '674c69c1bb2730de151de0c8' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+
+
+
+
 
 </body>
 
