@@ -33,12 +33,13 @@
             scroll-behavior: smooth;
             transition: filter 0.3s ease;
         }
-
+        @media only screen and (max-width: 768px) {
+        }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
             position: sticky;
@@ -47,16 +48,19 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
+        .logo img {
+            height: 30px;
+            margin-right: 5px;
+        }
+
+
         .logo {
             display: flex;
             align-items: center;
             cursor: pointer;
         }
 
-        .logo img {
-            height: 35px;
-            margin-right: 10px;
-        }
+
 
         .login {
             display: flex;
@@ -66,9 +70,12 @@
             padding: 10px 20px;
             border-radius: 20px;
             color: white;
+            font-size: 14;
+            padding: 8px 15px;
             font-weight: 500;
             transition: all 0.3s ease-in-out;
         }
+       
 
         .login:hover {
             background: linear-gradient(90deg, #4a90e2, #0071e3);
@@ -150,26 +157,27 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 400px;
+            height: 300px;
             background-image: url('https://source.unsplash.com/1600x900/?cybersecurity,technology');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
             animation: fadeIn 1.5s forwards;
         }
 
         .banner h1 {
+            font-size: 2rem;
             opacity: 0;
             transform: translateY(-20px);
             animation: slideInTitle 1.5s forwards;
         }
 
         .banner h2 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 400;
             margin-top: 10px;
             color: #e0e0e0;
@@ -179,7 +187,7 @@
 
         /* Sección ¿A qué nos dedicamos? */
         .about-section {
-            padding: 50px 10%;
+            padding: 30px 5%;
             text-align: center;
             background-color: #1e1e1e;
             border-radius: 15px;
@@ -197,14 +205,16 @@
 
         .about-icons {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 40px;
+            gap: 20px;
             font-size: 3rem;
             animation: fadeIn 1.5s forwards;
         }
 
         .about-icons div {
             display: flex;
+            font-size: 1.5rem;
             align-items: center;
             gap: 10px;
             animation: fadeIn 2s forwards;
@@ -236,7 +246,7 @@
         }
 
         .cybersecurity-icon {
-            color: #00aaff;
+            color: #ffffff;
         }
 
         .about-icons span {
@@ -247,7 +257,7 @@
 
         /* Productos */
         .productos-section {
-            padding: 50px 10%;
+            padding: 30px 5%;
             text-align: center;
             animation: fadeIn 2s forwards;
         }
@@ -271,7 +281,8 @@
             background: #2e2e2e;
             border-radius: 15px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 100px;
+            margin-bottom: 20px;
             padding: 20px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
@@ -319,12 +330,12 @@
 
         /* Contacto */
         .contact-section {
-            padding: 50px 10%;
+            padding: 30px 5%;
             text-align: center;
             background: #1e1e1e;
             border-radius: 15px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            max-width: 100px;
             margin: 50px auto;
             opacity: 0;
             animation: fadeIn 2s forwards;
@@ -379,6 +390,38 @@
             background: linear-gradient(90deg, #4a90e2, #0071e3);
             transform: scale(1.1);
         }
+
+
+
+
+
+        header,
+        .logo img,
+        .login,
+        .banner,
+        .about-section,
+        .about-icons,
+        .productos-section,
+        .producto-card,
+        .productos-container,
+        .contact-section,
+        .contact-form,
+        #cookie-popup,
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            /* Aseguramos que estos elementos no cambien en dispositivos móviles */
+            padding: inherit;
+            font-size: inherit;
+            width: inherit;
+        }
+
+
+
+
+
+
+
     </style>
 </head>
 
@@ -535,7 +578,7 @@
             color: #fff;
             padding: 20px;
             border-radius: 10px;
-            width: 30%;
+            width: 80%;
             max-width: 350px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
             animation: slideInUp 0.5s forwards;
@@ -588,6 +631,11 @@
 
 
 
+
+
+
+
+    
 
 
 </body>
