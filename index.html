@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -455,54 +456,11 @@
         </div>
     </div>
 
-    <!-- Contacto -->
-    <div class="contact-section">
-        <h2>Contacto</h2>
-        <form class="contact-form" id="contact-form">
-            <input type="text" name="name" id="name" placeholder="Tu nombre" required>
-            <input type="email" name="email" id="email" placeholder="Tu correo" required>
-            <textarea name="message" id="message" placeholder="Tu mensaje" rows="5" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-    
-
-
-
-
-
-
-
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("YOUR_USER_ID"); // Reemplaza "YOUR_USER_ID" con tu ID de usuario de EmailJS
-        })();
-    
-        // Manejo del envío de formulario
-        document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-    
-            var nombre = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var mensaje = document.getElementById("message").value;
-    
-            var templateParams = {
-                name: nombre,
-                email: email,
-                message: mensaje
-            };
-    
-            // Enviar mensaje con EmailJS
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams) // Reemplaza con tu servicio y template de EmailJS
-                .then(function (response) {
-                    alert("¡Mensaje enviado con éxito!");
-                    document.getElementById("contact-form").reset();
-                }, function (error) {
-                    alert("Hubo un error al enviar el mensaje: " + error.text);
-                });
-        });
-    </script>
+    <section class="contact-section">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes preguntas? ¡Estamos para ayudarte!</p>
+    <a href="mailto:fix.data.es@gmail.com">Contáctanos</a>
+</section>
 
 
 
@@ -587,12 +545,6 @@
 
     </style>
 
-
-
-
-
-
-
     <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -606,10 +558,7 @@
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
       </script>
-
-
-
-
 </body>
 
 </html>
+    
