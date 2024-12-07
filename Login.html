@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inicia sesión o regístrate en SecurityFix con un proceso rápido y seguro.">
-    <meta name="keywords" content="SecurityFix, inicio de sesión, registro, seguridad, autenticación, cuenta de usuario">
+    <meta name="description" content="Inicia sesión o regístrate en SecurityFix, un proceso rápido, seguro y confiable para gestionar tu cuenta.">
+    <meta name="keywords" content="SecurityFix, inicio de sesión, registro, seguridad, autenticación, cuenta de usuario, protección, privacidad">
     <meta name="author" content="SecurityFix">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0071e3">
+    <meta property="og:title" content="Iniciar sesión - SecurityFix">
+    <meta property="og:description" content="Gestión de cuentas con seguridad avanzada.">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    <meta property="og:url" content="https://securityfix.com/login">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Iniciar sesión - SecurityFix">
+    <meta name="twitter:description" content="Accede a tu cuenta de forma rápida y segura.">
+    <meta name="twitter:image" content="https://example.com/twitter-image.jpg">
+
     <title>Iniciar sesión - SecurityFix</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" type="image/png">
 
     <!-- Fuente San Francisco o Inter (Fuente de Apple) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -197,13 +210,13 @@
         <div id="login-form">
             <div class="form-group">
                 <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required placeholder="Introduce tu correo electrónico">
+                <input type="email" id="email" name="email" required placeholder="Introduce tu correo electrónico" aria-label="Correo electrónico">
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
                 <div style="position: relative;">
-                    <input type="password" id="password" name="password" required placeholder="Introduce tu contraseña">
-                    <span class="eye-icon" onclick="togglePassword()">👁️</span>
+                    <input type="password" id="password" name="password" required placeholder="Introduce tu contraseña" aria-label="Contraseña">
+                    <span class="eye-icon" onclick="togglePassword()"><i class="fas fa-eye"></i></span>
                 </div>
             </div>
             <button type="submit">Iniciar sesión</button>
@@ -212,27 +225,27 @@
         <div id="register-form" style="display: none;">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Introduce tu nombre">
+                <input type="text" id="nombre" name="nombre" required placeholder="Introduce tu nombre" aria-label="Nombre">
             </div>
             <div class="form-group">
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" required placeholder="Introduce tus apellidos">
+                <input type="text" id="apellidos" name="apellidos" required placeholder="Introduce tus apellidos" aria-label="Apellidos">
             </div>
             <div class="form-group">
                 <label for="register-email">Correo electrónico</label>
-                <input type="email" id="register-email" name="register-email" required placeholder="Introduce tu correo electrónico">
+                <input type="email" id="register-email" name="register-email" required placeholder="Introduce tu correo electrónico" aria-label="Correo electrónico">
             </div>
             <div class="form-group">
                 <label for="register-password">Contraseña</label>
                 <div style="position: relative;">
-                    <input type="password" id="register-password" name="register-password" required placeholder="Crea una contraseña">
-                    <span class="eye-icon" onclick="togglePassword()">👁️</span>
+                    <input type="password" id="register-password" name="register-password" required placeholder="Crea una contraseña" aria-label="Contraseña">
+                    <span class="eye-icon" onclick="togglePassword()"><i class="fas fa-eye"></i></span>
                 </div>
             </div>
 
             <!-- reCAPTCHA -->
             <div class="form-group">
-                <div class="g-recaptcha" data-sitekey="6LckYo8qAAAAAE5DBVw7CV37WyQxRST5LQcuwy-A"></div>
+                <div class="g-recaptcha" data-sitekey="your-site-key"></div>
             </div>
 
             <button type="submit">Registrarse</button>
@@ -279,3 +292,4 @@
     </script>
 </body>
 </html>
+
