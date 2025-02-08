@@ -247,7 +247,18 @@
             <div class="form-group">
                 <div class="g-recaptcha" data-sitekey="your-site-key"></div>
             </div>
+            
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LerYI8qAAAAADtEQN9LJ_f16_zmVMpmktar7eDu"></script>
 
+
+<script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LerYI8qAAAAADtEQN9LJ_f16_zmVMpmktar7eDu', {action: 'LOGIN'});
+    });
+  }
+</script>
             <button type="submit">Registrarse</button>
         </div>
 
