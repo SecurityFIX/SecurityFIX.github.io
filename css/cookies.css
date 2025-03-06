@@ -1,0 +1,189 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 2s;
+}
+
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
+}
+
+/* Estilo del popup */
+.popup {
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: popin 0.7s ease-in-out;
+    backdrop-filter: blur(10px);
+    border: 1px solid #4f8df6;
+    text-align: center;
+    transform: translateY(-20px);
+}
+
+/* Animación de aparición del popup */
+@keyframes popin {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Animación de desaparición */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* Títulos y párrafos */
+.popup h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.popup p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+    color: #d1d1d1;
+    letter-spacing: 0.5px;
+}
+
+/* Animaciones de texto */
+@keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.popup a {
+    color: #4f8df6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.popup a:hover {
+    color: #1a6bb2;
+}
+
+/* Estilo y animaciones para los botones */
+.popup button {
+    padding: 15px 30px;
+    margin: 15px 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    animation: pulse 1s infinite;
+}
+
+/* Botón Aceptar */
+.accept-btn {
+    background-color: #4f8df6;
+    color: white;
+}
+
+.accept-btn:hover {
+    background-color: #3b7fd8;
+}
+
+/* Botón Rechazar */
+.reject-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #c1443f;
+}
+
+/* Estilo de los iconos dentro de los botones */
+.popup button i {
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+}
+
+.popup button:hover i {
+    transform: rotate(15deg);
+}
+
+/* Animación de rebote en los botones */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+/* Animación del pulsado */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Animaciones para los iconos */
+.popup .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.popup .icon-container i {
+    font-size: 40px;
+    color: #4f8df6;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.popup .icon-container i:hover {
+    transform: rotate(360deg);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.buttons button {
+    width: 48%;
+}
+
+/* Difuminado del contenido detrás */
+.blurred-content {
+    filter: blur(5px);
+}
