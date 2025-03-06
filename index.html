@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SecurityFix - Desarrolladores Web">
+    <meta name="keywords" content="ciberseguridad, desarrollador web, JS, PHP, HTML, CSS">
+    <meta name="author" content="SecurityFix">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SecurityFix - Desarrolladores Web">
+    <meta property="og:description" content="Creamos tu página web personalizada para tu negocio o empresa.">
+    <meta property="og:image" content="https://source.unsplash.com/1600x900/?cybersecurity">
+    <meta property="og:url" content="https://securityfix.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SecurityFix - Desarrolladores Web">
+    <meta name="twitter:description" content="Impulsa tu negocio creando una web con nosotros">
+    <meta name="twitter:image" content="https://source.unsplash.com/1600x900/?security">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" type="image/png">
+    <title>SecurityFix - Ciberseguridad</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/7153/7153889.png" alt="Logo" aria-label="Logo de SecurityFix">
+            <h1>SecurityFix</h1>
+        </div>
+        <div class="login" role="button" aria-label="Iniciar sesión">
+            <i class="fas fa-user"></i> Iniciar sesión
+        </div>
+    </header>
+
+    <section class="banner">
+        <h1>Bienvenido a SecurityFix</h1>
+        <h2>Crea tu página web con nosotros.</h2>
+    </section>
+
+    <section class="about-section">
+        <h2>¿A qué nos dedicamos?</h2>
+        <div class="about-icons">
+            <div class="about-icon"><i class="fab fa-html5 html-icon"></i> <span>HTML</span></div>
+            <div class="about-icon"><i class="fab fa-css3-alt css-icon"></i> <span>CSS</span></div>
+            <div class="about-icon"><i class="fab fa-js js-icon"></i> <span>JavaScript</span></div>
+            <div class="about-icon"><i class="fab fa-php php-icon"></i> <span>PHP</span></div>
+            <h6>Utilizamos estos lenguajes de programación para crear tu página web.</h6>
+        </div>
+    </section>
+
+    <section class="productos-section">
+        <h2>Productos</h2>
+        <div class="productos-container">
+            <div class="producto-card">
+                <h3>Landing Page</h3>
+                <p>Creamos tu Landing Page para impulsar tu negocio, mejorar tu visibilidad y posicionarlo efectivamente en internet.</p>
+                <a href="#" class="btn-comprar">Comprar ahora</a>
+            </div>
+            <div class="producto-card">
+                <h3>Análisis SEO</h3>
+                <p>evaluación detallada de tu web para mejorar su posicionamiento, visibilidad y rendimiento en buscadores.</p>
+                <a href="#" class="btn-comprar">Comprar ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes alguna pregunta? No dudes en enviarnos un correo a ..</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SecurityFix - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<div id="popup" class="popup-overlay">
+    <div class="popup">
+        <link rel="stylesheet" href="css/cookies.css">
+        
+        <div class="icon-container">
+            <i class="fas fa-cookie-bite"></i>
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        <h2><i class="fas fa-cookie-bite"></i> Política de Cookies</h2>
+        <p>Este sitio web utiliza cookies para garantizar la mejor experiencia de navegación. Al hacer clic en "Aceptar", aceptas nuestros <a href="TC.html" target="_blank">Términos y Condiciones</a>.</p>
+        <div class="buttons">
+            <button class="accept-btn" id="acceptBtn"><i class="fas fa-check-circle"></i> Aceptar</button>
+            <button class="reject-btn" id="rejectBtn"><i class="fas fa-times-circle"></i> Rechazar</button>
+        </div>
+    </div>
+</div>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script>
+    const popup = document.getElementById('popup');
+    const content = document.getElementById('content');
+    const acceptBtn = document.getElementById('acceptBtn');
+    const rejectBtn = document.getElementById('rejectBtn');
+
+    // Mostrar popup al cargar la página
+    window.onload = function() {
+        setTimeout(() => {
+            popup.classList.add('show');
+            content.classList.add('blurred-content');
+        }, 500);
+    };
+
+    // Aceptar cookies
+    acceptBtn.addEventListener('click', function() {
+        popup.classList.remove('show');
+        content.classList.remove('blurred-content');
+        // Aplicar animación de fadeOut al popup
+        popup.style.animation = "fadeOut 0.5s forwards";
+        // Animación para el botón de aceptar
+        acceptBtn.style.animation = "bounce 0.5s ease-out";
+    });
+
+    // Rechazar cookies
+    rejectBtn.addEventListener('click', function() {
+        window.location.href = 'https://www.google.com'; // Redirige a Google
+    });
+</script>
